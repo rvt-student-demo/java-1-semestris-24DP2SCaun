@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class product {
     public static void main(String[] args) {
-        Scanner scanner = new Sanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 //string, double, int
         String nosaukums = scanner.nextLine();
 

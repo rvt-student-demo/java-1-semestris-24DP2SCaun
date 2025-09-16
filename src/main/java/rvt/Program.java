@@ -16,5 +16,7 @@ public class Program {
 
         // 4
         System.out.println(message);
+
+        scanner.close();
     }
 }
