@@ -6,25 +6,21 @@ public class veikals {
 
     public static void main(String[] args) {
         
-        // Ievadam konstantes priekšmetu cenām
-        final int SKRUVES_CENA = 5;
-        final int UZGRIEZNA_CENA = 3;
-        final int PAPLAKSNES_CENA = 1;
+        final int skruves_cena = 5;
+        final int uzgriezna_cena = 3;
+        final int paplaksna_cena = 1;
 
-        // Izveidojam Scanner objektu ievadei
         Scanner scanner = new Scanner(System.in);
 
-        // Lietotāja ievade
         System.out.print("Ievadiet skruvju skaitu: ");
         int skruves = scanner.nextInt();
 
         System.out.print("Ievadiet uzgrieznu skaitu: ");
         int uzgriezni = scanner.nextInt();
 
-        System.out.print("Ievadiet paplaksn4u skaitu: ");
+        System.out.print("Ievadiet paplaksnu skaitu: ");
         int paplaksnes = scanner.nextInt();
 
-        // Pārbaudām pasūtījumu
         boolean irKluda = false;
         
         if (uzgriezni < skruves) {
@@ -41,8 +37,7 @@ public class veikals {
             System.out.println("Pasutijums ir kartiba.");
         }
 
-        // Aprēķinām un izdrukājam kopējo cenu
-        int kopejaCena = (skruves * SKRUVES_CENA) + (uzgriezni * UZGRIEZNA_CENA) + (paplaksnes * PAPLAKSNES_CENA);
+        int kopejaCena = (skruves * skruves_cena) + (uzgriezni * uzgriezna_cena) + (paplaksnes * paplaksna_cena);
         System.out.println("Kopeja cena: " + kopejaCena);
 
         scanner.close();
