@@ -1,0 +1,53 @@
+package rvt;
+
+import java.util.Scanner;
+
+
+public class evenOddNumbers {
+public static void main(String[] args) {
+        //1
+        Scanner scanner = new Scanner(System.in);
+
+        int sum = 0;
+        int count = 0;
+        int evenCount = 0;
+        int oddCount = 0;
+
+        System.out.println("Write numbers: ");
+        while(true) {
+            int number = scanner.nextInt();
+            if(number == -1) {
+            System.out.println("Thx, Bye!");
+            break;
+            }
+            sum += number;
+
+            count++;
+
+            if(number % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+
+            }
+
+            System.out.println(sum);
+            System.out.println(count);
+
+             System.out.println(evenCount);
+            System.out.println(oddCount);
+            
+            if(count >0) {
+                double average = (double) sum/ count;
+                System.out.println(average);
+
+                
+            }
+
+            
+            scanner.close();
+        }
+
+    
+}
