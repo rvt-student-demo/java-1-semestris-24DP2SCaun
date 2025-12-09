@@ -4,43 +4,51 @@ import java.util.Scanner;
 
 public class statistics {
     public static void main(String[] args) {
+
+        
+        Scanner scanner = new Scanner(System.in);
         
         Statistics allNumbers = new Statistics(); 
         Statistics evenNumbers = new Statistics(); 
         Statistics oddNumbers = new Statistics();
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Ievadiet skaitļus: ");
         
         while (true) {
-            try {
-                int number = Integer.valueOf(scanner.nextLine());
-                
-                if (number == -1) {
-                    break;
+            String input = scanner.nextLine();
+
+            if (input.equals("-1")) {
+                break;
             }
             
+            try {
+                int number = Integer.valueOf(input);
+                
             allNumbers.addNumber(number); 
-            
+
             if (number % 2 == 0) { 
                 evenNumbers.addNumber(number);
+            
             } else {
                 oddNumbers.addNumber(number); 
             }
+        } catch (NumberFormatException e) {
+            System.out.println("Lūdzu, ievadiet derīgu skaitli vai -1, lai beigtu.");
         } 
-        } 
+
+    }
         
         System.out.println("Summa: " + allNumbers.sum());
         System.out.println("Pāra skaitļu summa: " + evenNumbers.sum()); 
         System.out.println("Nepāra skaitļu summa: " + oddNumbers.sum());
 
-    }
+    
     Statistics iepirkumi = new Statistics();
-        iepirkumi.addNumber(5);    
-        iepirkumi.addNumber(12);   
-        iepirkumi.addNumber(35);  
-        iepirkumi.addNumber(2);    
-        iepirkumi.addNumber(18);   
+        iepirkumi.addNumber(5);
+        iepirkumi.addNumber(12);
+        iepirkumi.addNumber(35);
+        iepirkumi.addNumber(2);
+        iepirkumi.addNumber(18);
         
         System.out.println("iepirkumu statistika "); 
         System.out.println("Iepirkumu skaits: " + iepirkumi.getCount()); 
@@ -59,7 +67,11 @@ public class statistics {
         System.out.println("Atzīmju skaits: " + atzimes.getCount());
         System.out.println("Kopējā atzīmju summa: " + atzimes.sum());
         System.out.println("Vidējā atzīme: " + atzimes.average());
+
+        scanner.close();
     }
+
+}
 
 
 class Statistics {
@@ -78,11 +90,10 @@ class Statistics {
         this.sum += number;
     }
 
-   
     public int getCount() {
         return this.count; 
     }
-}
+
 
 public int sum() {
         return this.sum;
@@ -97,4 +108,4 @@ public int sum() {
         return (double) this.sum / this.count;
     }
 
-
+}
