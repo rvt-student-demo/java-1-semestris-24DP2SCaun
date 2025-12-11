@@ -50,7 +50,7 @@ public class statistics {
         iepirkumi.addNumber(2);
         iepirkumi.addNumber(18);
         
-        System.out.println("iepirkumu statistika "); 
+        System.out.println("iepirkumu statistika"); 
         System.out.println("Iepirkumu skaits: " + iepirkumi.getCount()); 
         System.out.println("Kopējā izdevumu summa: " + iepirkumi.sum() + " EUR"); 
         System.out.println("Vidējā izdevumu summa: " + iepirkumi.average() + " EUR"); 
